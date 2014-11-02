@@ -26,10 +26,31 @@ var UserSchema = new mongoose.Schema({
   salt: { type: String, default: '' }
 })
 
-UserSchema.plugin(userPlugin, {})
+UserSchema.plugin(userPlugin.schema, {})
 
 mongoose.model('User', UserSchema)
 ```
+
+
+## todo
+
+```
+app.use(function(req,res,next){
+	console.log(req.url)
+	var exception = ['/users/login','/users/register']
+	if (exception.contain(req.url) == true) {
+		next();
+		return;
+	}
+	
+	if (req.session.user) {
+    next();
+  } else {
+    res.redirect('/users/login');
+  }
+});
+```
+
 
 ## License
 

@@ -1,1 +1,4 @@
-exports = module.exports = require('./lib/nodeonly-user')
+exports = module.exports = {
+	schema:require('./lib/schema'),
+	middleware:require('./lib/middleware')
+}
