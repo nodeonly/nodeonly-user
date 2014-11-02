@@ -2,6 +2,8 @@
 
 Some generic methods, statics and virtuals used for user schemas
 
+[![npm version](https://badge.fury.io/js/nodeonly-user.svg)](http://badge.fury.io/js/nodeonly-user)
+
 ## Installation
 
 ```sh
