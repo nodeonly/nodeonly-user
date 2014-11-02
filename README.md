@@ -32,4 +32,5 @@ mongoose.model('User', UserSchema)
 ```
 
 ## License
-MIT
+
+apache v2
