@@ -15,10 +15,14 @@
     "user"
   ],
   "devDependencies": {
-    "mocha": "latest",
-    "mongoose": "latest"
+    "mocha": "latest"
   },
   "author": "Alfred Sang",
   "license": "MIT",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "dependencies": {
+		"mongoose": "latest",
+    "bcrypt"  : "^0.8.0",
+    "config"  : "^1.7.0"
+  }
 }

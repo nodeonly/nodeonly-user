@@ -16,7 +16,7 @@ or include it in `package.json`
 
 ```js
 var mongoose = require('mongoose')
-var userPlugin = require('nodeonly-user')
+var user = require('nodeonly-user')
 
 var UserSchema = new mongoose.Schema({
   name: { type: String, default: '' },
@@ -26,31 +26,19 @@ var UserSchema = new mongoose.Schema({
   salt: { type: String, default: '' }
 })
 
-UserSchema.plugin(userPlugin.schema, {})
+UserSchema.plugin(user.schema, {})
 
 mongoose.model('User', UserSchema)
 ```
 
 
-## todo
+## express middleware
 
 ```
-app.use(function(req,res,next){
-	console.log(req.url)
-	var exception = ['/users/login','/users/register']
-	if (exception.contain(req.url) == true) {
-		next();
-		return;
-	}
-	
-	if (req.session.user) {
-    next();
-  } else {
-    res.redirect('/users/login');
-  }
-});
+app.use(user.middleware);
 ```
 
+req.currentUser
 
 ## License
 
