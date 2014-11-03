@@ -1,7 +1,7 @@
 var assert = require('chai').assert;
 var expect = require('chai').expect;
 require('chai').should();
-
+var User = require('../lib/user_model');
 // mongoose config
 var mongoose = require('mongoose')  
   , connectionString = 'mongodb://localhost:27017/exam_weixin_teset'
@@ -34,7 +34,7 @@ describe('UserModel', function(){
 	before(function() {
     // runs before all tests in this block
 
-		var User = require('../lib/users');
+		
 
 		// create a user a new user
 		var testUser = new User({
@@ -50,8 +50,6 @@ describe('UserModel', function(){
   })
   after(function(){
     // runs after all tests in this block
-		
-		var User = require('../lib/users');
 		User.remove({}, function (err) {
 		  if (err) return handleError(err);
 		  // removed!
@@ -69,8 +67,6 @@ describe('UserModel', function(){
   describe('#save()', function(){
     it('should return sang_test2 when user save', function(done){
 
-  			var User = require('../lib/users');
-
   			// create a user a new user
   			var testUser = new User({
   			    username: 'sang_test2',
@@ -84,16 +80,11 @@ describe('UserModel', function(){
   					assert.equal(user.username, 'sang_test2');
 						done()
   			});
-
-
     })
   })
 
   describe('#getAuthenticated()', function(){
     it('should return 60 when auto save Password123 encrypted string length', function(done){
-
-			var User = require('../lib/users');
-
 	    // attempt to authenticate user
 	    User.getAuthenticated('sang_test1', 'Password123', function(err, user, reason) {
         if (err) throw err;
