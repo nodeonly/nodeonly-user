@@ -33,9 +33,6 @@ db.once('open', function callback () {
 describe('UserModel', function(){
 	before(function() {
     // runs before all tests in this block
-
-		
-
 		// create a user a new user
 		var testUser = new User({
 		    username: 'sang_test1',
